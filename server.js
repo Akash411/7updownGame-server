@@ -26,28 +26,28 @@ app.post("/calculate-result", (req, res) => {
     case "7 Down":
       if (result < 7) {
         updatedPoints += betAmount;
-        message = `You won! New points: ${updatedPoints}`;
+        message = `You won! New points: <span style="color: green;">${updatedPoints}</span>`;
       } else {
         updatedPoints -= betAmount;
-        message = `You lost! New points: ${updatedPoints}`;
+        message = `You lost! New points: <span style="color: red;">${updatedPoints}</span>`;
       }
       break;
     case "Lucky 7":
       if (result === 7) {
         updatedPoints += betAmount * 5;
-        message = `You won! New points: ${updatedPoints}`;
+        message = `You won! New points: <span style="color: green;">${updatedPoints}</span>`;
       } else {
-        updatedPoints -= betAmount;
-        message = `You lost! New points: ${updatedPoints}`;
+        updatedPoints -= betAmount * 5;
+        message = `You lost! New points: <span style="color: red;">${updatedPoints}</span>`;
       }
       break;
     case "7 Up":
       if (result > 7) {
         updatedPoints += betAmount;
-        message = `You won! New points: ${updatedPoints}`;
+        message = `You won! New points: <span style="color: green;">${updatedPoints}</span>`;
       } else {
         updatedPoints -= betAmount;
-        message = `You lost! New points: ${updatedPoints}`;
+        message = `You lost! New points: <span style="color: red;">${updatedPoints}</span>`;
       }
       break;
     default:
