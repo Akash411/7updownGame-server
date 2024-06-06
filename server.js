@@ -14,7 +14,7 @@ app.post("/roll-dice", (req, res) => {
   const die1 = Math.floor(Math.random() * 6) + 1;
   const die2 = Math.floor(Math.random() * 6) + 1;
   const result = die1 + die2;
-  res.json({ result });
+  res.json({ die1, die2, result });
 });
 
 app.post("/calculate-result", (req, res) => {
